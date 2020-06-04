@@ -8,9 +8,14 @@ namespace BulkEmail.CSV
 
         Please leave the rest of this file as it is so we can discuss your concerns during the next stage of the interview process.
         
-        *)
-        *)
-        *)
+        *)    Remove Flag Attribute from Enum Declararion
+        *)    Write function we can use StringBuilder
+        *)   Cons variable should be initiated in global level.
+        *)  Read(string column1, string column2) function not required
+        *)   Read function replace line null check with => string.IsNullOrWhiteSpace
+        *)  In Read Function separator variable is not required.
+        *) Can be followed Solid Principles for better readibility of code.
+        
     */
 
     public class CSVReaderWriterForAnnotation
@@ -40,7 +45,7 @@ namespace BulkEmail.CSV
 
         public void Write(params string[] columns)
         {
-            string outPut = "";
+            string outPut = ""; 
 
             for (int i = 0; i < columns.Length; i++)
             {
@@ -102,7 +107,7 @@ namespace BulkEmail.CSV
 
                 return false;
             }
-
+            
             columns = line.Split(separator);
 
             if (columns.Length == 0)

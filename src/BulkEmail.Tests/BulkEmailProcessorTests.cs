@@ -1,5 +1,7 @@
 ﻿using BulkEmail.Processor;
 using NUnit.Framework;
+using System.IO;
+using System.Reflection;
 
 namespace BulkEmail.Tests
 {
@@ -20,7 +22,12 @@ namespace BulkEmail.Tests
         {
             var processor = new BulkEmailProcessor(fakeEmailProvider);
 
-            processor.Process(TestInputFile);
+            string folderPath = Assembly.GetExecutingAssembly().Location;
+            folderPath = folderPath.Substring(0, folderPath.LastIndexOf(@"\"));
+            folderPath = folderPath.Substring(0, folderPath.LastIndexOf(@"\"));
+            folderPath = folderPath.Substring(0, folderPath.LastIndexOf(@"\"));
+            
+            processor.Process(Path.Combine(folderPath, TestInputFile));
 
             Assert.That(fakeEmailProvider.Counter, Is.EqualTo(229));
         }
