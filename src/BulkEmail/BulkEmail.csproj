@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSV\CSVOpenAndCloseFiles.cs" />
+    <Compile Include="CSV\CSVReader.cs" />
+    <Compile Include="CSV\CSVWriter.cs" />
     <Compile Include="Processor\BulkEmailProcessor.cs" />
     <Compile Include="CSV\CSVReaderWriter For Annotation.cs" />
     <Compile Include="CSV\CSVReaderWriter.cs" />
